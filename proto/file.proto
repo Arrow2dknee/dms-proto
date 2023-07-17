@@ -4,6 +4,10 @@ package file;
 
 service FilesService {
   rpc CreateFile (CreateFileRequest) returns (CreateFileResponse) {}
+  rpc UpdateFilePath (UpdatePathRequest) returns (UpdatePathResponse) {}
+  rpc FindOne (FindOneRequest) returns (FindOneResponse) {}
+  rpc FindAll (FindAllRequest) returns (FindAllResponse) {}
+  rpc DeleteFile (DeleteFileRequest) returns (DeleteFileResponse) {}
 }
 
 // Create file
@@ -24,4 +28,54 @@ message File {
 message CreateFileResponse {
   string message = 1;
   File data = 2;
+}
+
+// Update file path
+message UpdatePathRequest {
+  string id = 1;
+  string folder = 2;
+}
+
+message UpdatePathResponse {
+  string message = 1;
+  string data = 2;
+}
+
+// Find file by name
+message FindOneRequest {
+  string name = 1;
+}
+
+message FindOneResponse {
+  string message = 1;
+  FileMetadata data = 2;
+}
+
+// Find all files
+message FindAllRequest {
+  string user = 1;
+  string page = 2;
+  string limit = 3;
+  string search = 4;
+}
+
+message FileMetadata {
+  string id = 1;
+  string name = 2;
+  string content = 3;
+}
+
+message FindAllResponse {
+  string message = 1;
+  FileMetadata data = 2;
+}
+
+// Delete file
+message DeleteFileRequest {
+  string id = 1;
+}
+
+message DeleteFileResponse {
+  string message = 1;
+  string data = 2;
 }
