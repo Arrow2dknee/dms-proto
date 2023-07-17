@@ -10,7 +10,7 @@ service FilesService {
 message CreateFileRequest {
   string name = 1;
   string extension = 2;
-  bytes content = 3;
+  string content = 3;
   string permissions = 4;
   string folderId = 5;
   string userId = 6;
