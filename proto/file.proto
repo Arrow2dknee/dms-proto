@@ -67,7 +67,7 @@ message FileMetadata {
 
 message FindAllResponse {
   string message = 1;
-  FileMetadata data = 2;
+  repeated FileMetadata data = 2;
 }
 
 // Delete file
