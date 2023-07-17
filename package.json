@@ -1,0 +1,11 @@
+{
+  "name": "dms-proto",
+  "version": "1.0.0",
+  "description": "proto definitions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arrow2dknee",
+  "license": "ISC"
+}
