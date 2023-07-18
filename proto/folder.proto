@@ -1,3 +1,44 @@
 syntax = "proto3";
 
 package folder;
+
+service FolderService {
+  grpc CreateFolder (CreateFolderRequest) returns (CreateFolderResponse) {}
+  grpc UpdateFolderName (UpdateFolderNameRequest) returns (UpdateFolderNameResponse) {}
+  grpc DeleteFolder (DeleteFolderRequest) returns (DeleteFolderResponse) {}
+  // grpc GetFilesOfFolder () returns () {}
+  // grpc GetFolders () returns () {}
+}
+
+message FolderMetadata {
+  string name = 1;
+}
+
+// Create folder
+message CreateFolderRequest {
+  string name = 1;
+}
+
+message CreateFolderResponse {
+  string message = 1;
+  FolderMetadata data = 2;
+}
+
+// Update folder name
+message UpdateFolderNameRequest {
+  string name = 1;
+}
+
+message UpdateFolderNameResponse {
+  string message = 1;
+  FolderMetadata data = 2;
+}
+
+// Delete folder (if there are no files in folder)
+message DeleteFolderRequest {
+  string id = 1;
+}
+
+message DeleteFolderResponse {
+  string message = 1;
+}
