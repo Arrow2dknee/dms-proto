@@ -6,8 +6,7 @@ service FolderService {
   rpc CreateFolder (CreateFolderRequest) returns (CreateFolderResponse) {}
   rpc UpdateFolderName (UpdateFolderNameRequest) returns (UpdateFolderNameResponse) {}
   rpc DeleteFolder (DeleteFolderRequest) returns (DeleteFolderResponse) {}
-  // rpc GetFilesOfFolder () returns () {}
-  // rpc GetFolders () returns () {}
+  rpc GetFolders (GetFoldersRequest) returns (GetFoldersResponse) {}
 }
 
 message FolderMetadata {
@@ -46,4 +45,16 @@ message DeleteFolderRequest {
 message DeleteFolderResponse {
   string message = 1;
   string data = 2;
+}
+
+// Get folders created by user
+message GetFoldersRequest {
+  string user = 1;
+  string page = 2;
+  string limit = 3;
+}
+
+message GetFoldersResponse {
+  string message = 1;
+  repeated FolderMetadata data = 2;
 }

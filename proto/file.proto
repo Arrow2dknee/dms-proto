@@ -8,6 +8,7 @@ service FilesService {
   rpc FindOne (FindOneRequest) returns (FindOneResponse) {}
   rpc FindAll (FindAllRequest) returns (FindAllResponse) {}
   rpc DeleteFile (DeleteFileRequest) returns (DeleteFileResponse) {}
+  rpc GetFilesOfFolder (GetFilesOfFolderRequest) returns (GetFilesOfFolderResponse) {}
 }
 
 // Create file
@@ -81,4 +82,17 @@ message DeleteFileRequest {
 message DeleteFileResponse {
   string message = 1;
   string data = 2;
+}
+
+// Get all files contained inside a folder
+message GetFilesOfFolderRequest {
+  string folder = 1;
+  string user = 2;
+  string page = 3;
+  string limit = 4;
+}
+
+message GetFilesOfFolderResponse {
+  string message = 1;
+  repeated FileMetadata data = 2;
 }
