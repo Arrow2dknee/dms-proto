@@ -28,6 +28,7 @@ message CreateFolderResponse {
 // Update folder name
 message UpdateFolderNameRequest {
   string name = 1;
+  string user = 2;
 }
 
 message UpdateFolderNameResponse {
@@ -38,6 +39,7 @@ message UpdateFolderNameResponse {
 // Delete folder (if there are no files in folder)
 message DeleteFolderRequest {
   string id = 1;
+  string user = 2;
 }
 
 message DeleteFolderResponse {
