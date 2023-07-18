@@ -17,6 +17,7 @@ message FolderMetadata {
 // Create folder
 message CreateFolderRequest {
   string name = 1;
+  string user = 2;
 }
 
 message CreateFolderResponse {
