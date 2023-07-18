@@ -27,8 +27,9 @@ message CreateFolderResponse {
 
 // Update folder name
 message UpdateFolderNameRequest {
-  string name = 1;
-  string user = 2;
+  string id = 1
+  string name = 2;
+  string user = 3;
 }
 
 message UpdateFolderNameResponse {
