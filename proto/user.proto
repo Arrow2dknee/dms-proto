@@ -17,6 +17,18 @@ message UserId {
   string id = 1;
 }
 
+message SignedPayload {
+  string id = 1;
+  string email = 2;
+}
+
+message LoginData {
+  string id = 1;
+  string fullName = 2;
+  string email = 3;
+  string token = 4;
+}
+
 // Register user
 message RegisterRequest {
   string fullName = 1;
@@ -37,7 +49,7 @@ message LoginRequest {
 
 message LoginResponse {
   string message = 1;
-  UserData data = 2;
+  LoginData data = 2;
 }
 
 // Validate user
