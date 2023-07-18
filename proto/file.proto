@@ -34,6 +34,7 @@ message CreateFileResponse {
 message UpdatePathRequest {
   string id = 1;
   string folder = 2;
+  string user = 3;
 }
 
 message UpdatePathResponse {
@@ -44,6 +45,7 @@ message UpdatePathResponse {
 // Find file by name
 message FindOneRequest {
   string name = 1;
+  string user = 2;
 }
 
 message FindOneResponse {
@@ -73,6 +75,7 @@ message FindAllResponse {
 // Delete file
 message DeleteFileRequest {
   string id = 1;
+  string user = 2;
 }
 
 message DeleteFileResponse {
