@@ -85,6 +85,13 @@ message DeleteFileResponse {
 }
 
 // Get all files contained inside a folder
+message FilesInFolder {
+  string id = 1;
+  string name = 2;
+  string content = 3;
+  string folderName = 4;
+}
+
 message GetFilesOfFolderRequest {
   string folder = 1;
   string user = 2;
@@ -94,5 +101,5 @@ message GetFilesOfFolderRequest {
 
 message GetFilesOfFolderResponse {
   string message = 1;
-  repeated FileMetadata data = 2;
+  repeated FilesInFolder data = 2;
 }
