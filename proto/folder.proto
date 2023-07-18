@@ -41,4 +41,5 @@ message DeleteFolderRequest {
 
 message DeleteFolderResponse {
   string message = 1;
+  string data = 2;
 }
