@@ -1,3 +1,51 @@
 syntax = "proto3";
 
 package user;
+
+service UserService {
+  rpc Register (RegisterRequest) returns (RegisterResponse) {}
+  rpc Login (LoginRequest) returns (LoginResponse) {}
+  rpc ValidateUser (ValidateUserRequest) returns (ValidateUserResponse) {}
+}
+
+message UserData {
+  string fullName = 1;
+  string email = 2;
+}
+
+message UserId {
+  string id = 1;
+}
+
+// Register user
+message RegisterRequest {
+  string fullName = 1;
+  string email = 2;
+  string password = 3;
+}
+
+message RegisterResponse {
+  string message = 1;
+  UserData data = 2;
+}
+
+// Login user
+message LoginRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message LoginResponse {
+  string message = 1;
+  UserData data = 2;
+}
+
+// Validate user
+message ValidateUserRequest {
+  string token = 1;
+}
+
+message ValidateUserResponse {
+  string message = 1;
+  UserId data = 2;
+}
