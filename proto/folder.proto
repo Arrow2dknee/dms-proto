@@ -3,11 +3,11 @@ syntax = "proto3";
 package folder;
 
 service FolderService {
-  grpc CreateFolder (CreateFolderRequest) returns (CreateFolderResponse) {}
-  grpc UpdateFolderName (UpdateFolderNameRequest) returns (UpdateFolderNameResponse) {}
-  grpc DeleteFolder (DeleteFolderRequest) returns (DeleteFolderResponse) {}
-  // grpc GetFilesOfFolder () returns () {}
-  // grpc GetFolders () returns () {}
+  rpc CreateFolder (CreateFolderRequest) returns (CreateFolderResponse) {}
+  rpc UpdateFolderName (UpdateFolderNameRequest) returns (UpdateFolderNameResponse) {}
+  rpc DeleteFolder (DeleteFolderRequest) returns (DeleteFolderResponse) {}
+  // rpc GetFilesOfFolder () returns () {}
+  // rpc GetFolders () returns () {}
 }
 
 message FolderMetadata {
