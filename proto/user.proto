@@ -58,6 +58,6 @@ message ValidateUserRequest {
 }
 
 message ValidateUserResponse {
-  string message = 1;
-  UserId data = 2;
+  int32 status = 1;
+  string id = 2;
 }
